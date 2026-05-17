@@ -128,6 +128,11 @@ async function syncOne(target: ChainTarget): Promise<SyncResult> {
     toBlock,
     maxSeconds: MAX_SECONDS_PER_CHAIN,
   })
+  if (scan.highestScannedBlock < fromBlock) {
+    throw new Error(
+      `no block window scanned successfully from ${fromBlock} to ${toBlock} after ${scan.attempts} attempts (${scan.errors} errors)`,
+    )
+  }
 
   // Filter senders against what's already in the blob.
   const knownAdapters = new Set(Object.values(existing.adapters).map((a) => a.toLowerCase()))

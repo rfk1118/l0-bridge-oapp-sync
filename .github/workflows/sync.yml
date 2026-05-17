@@ -35,19 +35,32 @@ jobs:
 
       - run: npm install --no-audit --no-fund
 
+      - name: Prepare data branch worktree
+        run: |
+          if git ls-remote --exit-code --heads origin data >/dev/null 2>&1; then
+            git fetch origin data:data
+            git worktree add ../oapp-index-data data
+          else
+            git worktree add --detach ../oapp-index-data
+            git -C ../oapp-index-data switch --orphan data
+            git -C ../oapp-index-data rm -rf . || true
+          fi
+          mkdir -p ../oapp-index-data/data
+
       - name: Run sync
+        env:
+          OAPP_INDEX_DIR: ../oapp-index-data/data
         run: npx tsx scripts/sync.ts
 
       - name: Commit updated index files
         run: |
-          if [ -z "$(git status --porcelain -- data)" ]; then
+          if [ -z "$(git -C ../oapp-index-data status --porcelain -- data)" ]; then
             echo "No index changes to commit."
             exit 0
           fi
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git commit -m "chore: sync oapp index"
-          git pull --rebase
-          git push
+          git -C ../oapp-index-data config user.name "github-actions[bot]"
+          git -C ../oapp-index-data config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C ../oapp-index-data add data
+          git -C ../oapp-index-data commit -m "chore: sync oapp index"
+          git -C ../oapp-index-data push origin HEAD:data

@@ -90,10 +90,12 @@ export interface ScanRangeResult {
 }
 
 /**
- * Scan EndpointV2.PacketSent logs in a block range (newest-first) with
+ * Scan EndpointV2.PacketSent logs in a block range (oldest-first) with
  * adaptive window sizing. Survives public-RPC throttling by shrinking the
  * window on errors, learning the RPC's max range cap from error messages,
- * and aborting cleanly when even the minimum window keeps failing.
+ * and aborting cleanly when even the minimum window keeps failing. The
+ * returned highestScannedBlock is always the end of a contiguous scanned
+ * range starting at fromBlock.
  */
 export async function scanPacketSentRange(
   provider: ethers.Provider,
@@ -112,26 +114,29 @@ export async function scanPacketSentRange(
   let learnedMaxWindow = maxWindow
   const senders = new Set<string>()
   let totalLogs = 0
-  let cursorEnd = toBlock
+  let cursorStart = fromBlock
+  let highestScannedBlock = fromBlock - 1
+  let lowestScannedBlock = 0
   let attempts = 0
   let errors = 0
   let consecutiveErrorsAtMinWindow = 0
   const abortAfterMinWindowErrors = 4
   const t0 = Date.now()
 
-  while (cursorEnd >= fromBlock && (Date.now() - t0) / 1000 < maxSeconds) {
+  while (cursorStart <= toBlock && (Date.now() - t0) / 1000 < maxSeconds) {
     attempts++
-    const from = Math.max(fromBlock, cursorEnd - windowSize + 1)
+    const from = cursorStart
+    const to = Math.min(toBlock, cursorStart + windowSize - 1)
     try {
       const logs = await withTimeout(
         provider.getLogs({
           address: endpoint,
           topics: [PACKET_SENT_TOPIC],
           fromBlock: from,
-          toBlock: cursorEnd,
+          toBlock: to,
         }),
         perCallTimeoutMs,
-        `getLogs ${from}..${cursorEnd}`,
+        `getLogs ${from}..${to}`,
       )
       totalLogs += logs.length
       for (const l of logs) {
@@ -139,8 +144,10 @@ export async function scanPacketSentRange(
         if (s) senders.add(s)
       }
       onProgress(
-        `[${attempts}] ${from}..${cursorEnd} (w=${windowSize}) +${logs.length} logs, total=${totalLogs}, unique=${senders.size}`,
+        `[${attempts}] ${from}..${to} (w=${windowSize}) +${logs.length} logs, total=${totalLogs}, unique=${senders.size}`,
       )
+      if (lowestScannedBlock === 0) lowestScannedBlock = from
+      highestScannedBlock = to
       consecutiveErrorsAtMinWindow = 0
       if (logs.length === 0) {
         windowSize = Math.min(windowSize * 2, learnedMaxWindow)
@@ -149,12 +156,11 @@ export async function scanPacketSentRange(
       } else if (logs.length > 5_000) {
         windowSize = Math.max(minWindow, Math.floor(windowSize / 2))
       }
-      cursorEnd = from - 1
-      if (from === fromBlock) break
+      cursorStart = to + 1
     } catch (err) {
       errors++
       const msg = err instanceof Error ? err.message : String(err)
-      onProgress(`[${attempts}] ${from}..${cursorEnd} ERR: ${msg.slice(0, 100).replace(/\n/g, ' ')}`)
+      onProgress(`[${attempts}] ${from}..${to} ERR: ${msg.slice(0, 100).replace(/\n/g, ' ')}`)
 
       if (windowSize <= minWindow) {
         consecutiveErrorsAtMinWindow++
@@ -189,12 +195,12 @@ export async function scanPacketSentRange(
     await sleep(30)
   }
 
-  const timedOut = cursorEnd >= fromBlock
+  const timedOut = cursorStart <= toBlock
   return {
     senders,
     totalLogs,
-    highestScannedBlock: toBlock,
-    lowestScannedBlock: timedOut ? cursorEnd + 1 : fromBlock,
+    highestScannedBlock,
+    lowestScannedBlock: lowestScannedBlock || fromBlock,
     timedOut,
     attempts,
     errors,
