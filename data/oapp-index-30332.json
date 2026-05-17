@@ -4,12 +4,14 @@
     "chainId": 146,
     "chainKey": "sonic",
     "endpointV2": "0x6F475642a6e85809B1c36Fa62763669b1b48DD5B",
-    "syncedAt": "2026-05-17T10:31:58.390Z",
-    "lastSyncedBlock": 70848550,
+    "syncedAt": "2026-05-17T11:27:46.235Z",
+    "lastSyncedBlock": 70852262,
     "firstScannedBlock": 70835407
   },
   "adapters": {},
-  "nativeOfts": [],
+  "nativeOfts": [
+    "0x80eede496655fb9047dd39d9f418d5483ed600df"
+  ],
   "unknownOApps": [
     "0x2086f755a6d9254045c257ea3d382ef854849b0f"
   ]
