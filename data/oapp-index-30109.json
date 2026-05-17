@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "eid": 30109,
+    "chainId": 137,
+    "chainKey": "polygon",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T08:09:03.644Z",
+    "lastSyncedBlock": 87008934,
+    "firstScannedBlock": 87003935
+  },
+  "adapters": {
+    "0xc2132d05d31c914a87c6611c10748aeb04b58e8f": "0x6ba10300f0dc58b7a1e4c0e41f5dabb7d7829e13"
+  },
+  "nativeOfts": [
+    "0x80eede496655fb9047dd39d9f418d5483ed600df"
+  ],
+  "unknownOApps": [
+    "0x6ce9bf8cdab780416ad1fd87b318a077d2f50eac"
+  ]
+}

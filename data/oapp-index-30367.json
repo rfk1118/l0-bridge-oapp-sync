@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "eid": 30367,
+    "chainId": 999,
+    "chainKey": "hyperliquid",
+    "endpointV2": "0x3A73033C0b1407574C76BdBAc67f126f6b4a9AA9",
+    "syncedAt": "2026-05-17T08:09:20.714Z",
+    "lastSyncedBlock": 35325479,
+    "firstScannedBlock": 35324480
+  },
+  "adapters": {},
+  "nativeOfts": [
+    "0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c"
+  ],
+  "unknownOApps": [
+    "0x4f96b683714377c38123631f2d17cdf18b3f46a7",
+    "0x74db7a52773a52699dbc0c01b1254e5301e3e119"
+  ]
+}

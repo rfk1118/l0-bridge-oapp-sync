@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "eid": 30290,
+    "chainId": 167000,
+    "chainKey": "taiko",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T08:09:12.903Z",
+    "lastSyncedBlock": 6824411,
+    "firstScannedBlock": 6819412
+  },
+  "adapters": {},
+  "nativeOfts": [],
+  "unknownOApps": []
+}

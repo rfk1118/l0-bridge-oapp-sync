@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "eid": 30214,
+    "chainId": 534352,
+    "chainKey": "scroll",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T08:09:07.410Z",
+    "lastSyncedBlock": 33730086,
+    "firstScannedBlock": 33725087
+  },
+  "adapters": {},
+  "nativeOfts": [
+    "0x01f0a31698c4d065659b9bdc21b3610292a1c506",
+    "0x65421ba909200b81640d98b979d07487c9781b66"
+  ],
+  "unknownOApps": [
+    "0x4694900bdba99edf07a2e46c4093f88f9106a90d",
+    "0x4e422b0acb2bd7e3ac70b5c0e5eb806e86a94038"
+  ]
+}

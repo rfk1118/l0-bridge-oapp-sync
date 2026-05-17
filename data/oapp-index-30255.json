@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "eid": 30255,
+    "chainId": 252,
+    "chainKey": "fraxtal",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T08:09:08.047Z",
+    "lastSyncedBlock": 36097318,
+    "firstScannedBlock": 36092319
+  },
+  "adapters": {
+    "0xfc00000000000000000000000000000000000001": "0x96a394058e2b84a89bac9667b19661ed003cf5d4"
+  },
+  "nativeOfts": [
+    "0xbe5b2eb217bb04a7ddd1a451e6a1567dc15e2fd6"
+  ],
+  "unknownOApps": []
+}
