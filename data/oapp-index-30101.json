@@ -4,8 +4,8 @@
     "chainId": 1,
     "chainKey": "ethereum",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-17T22:47:51.226Z",
-    "lastSyncedBlock": 25117997,
+    "syncedAt": "2026-05-17T23:20:24.361Z",
+    "lastSyncedBlock": 25118159,
     "firstScannedBlock": 25108615
   },
   "adapters": {
