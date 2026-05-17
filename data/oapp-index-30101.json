@@ -4,8 +4,8 @@
     "chainId": 1,
     "chainKey": "ethereum",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-17T11:51:41.345Z",
-    "lastSyncedBlock": 25114724,
+    "syncedAt": "2026-05-17T12:21:52.533Z",
+    "lastSyncedBlock": 25114875,
     "firstScannedBlock": 25108615
   },
   "adapters": {
@@ -100,6 +100,7 @@
     "0x4de413a26fc24c3fc27cc983be70aa9c5c299387",
     "0x6b8ad17795d89b283e6d0362a87a403f3544bb9d",
     "0x6d6620efa72948c5f68a3c8646d58c00d3f4a980",
+    "0x6ee3aaccf9f2321e49063c4f8da775ddbd407268",
     "0x6f2c4c43bd8a9432a6a019b577bcd4b77c757004",
     "0x77ef4e9d37524069f81890c537a5c5d390bb4b4d",
     "0xb83f19d9e6824c27c7d46e5c78201a70e949243c",
