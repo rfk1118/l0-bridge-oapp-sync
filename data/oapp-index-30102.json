@@ -4,8 +4,8 @@
     "chainId": 56,
     "chainKey": "bsc",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-17T18:48:59.363Z",
-    "lastSyncedBlock": 98864619,
+    "syncedAt": "2026-05-17T19:28:01.868Z",
+    "lastSyncedBlock": 98869823,
     "firstScannedBlock": 98774390
   },
   "adapters": {
@@ -46,6 +46,7 @@
     "0xac531eb26ca1d21b85126de8fb87e80e09002dcf",
     "0xace9de5af92eb82a97a5973b00eff85024bdcb39",
     "0xbe7e12b2e128bc955a0130ffb168f031d7dd8d58",
+    "0xc08cd26474722ce93f4d0c34d16201461c10aa8c",
     "0xc32cc70741c3a8433dcbcb5ade071c299b55ffc8",
     "0xc61eb549acf4a05ed6e3fe0966f5e213b23541ce",
     "0xda7ad9dea9397cffddae2f8a052b82f1484252b3",
