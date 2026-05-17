@@ -11,8 +11,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "ethers": "^6.15.0",
-    "redis": "^4.7.0"
+    "ethers": "^6.15.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

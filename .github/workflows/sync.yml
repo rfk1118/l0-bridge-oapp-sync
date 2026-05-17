@@ -2,11 +2,12 @@ name: Sync OApp Index
 
 on:
   schedule:
-    # Every 5 minutes — GitHub Actions silently rate-limits cron faster
-    # than 5 min. We don't need real-time — adapters that sent a packet
-    # in the last cycle become resolvable within ≤5 min (≤15 min with peak-time skip).
-    - cron: '*/5 * * * *'
+    # Every 30 minutes.
+    - cron: '*/30 * * * *'
   workflow_dispatch: {}
+
+permissions:
+  contents: write
 
 # Avoid overlapping runs if a previous one is slow.
 concurrency:
@@ -28,6 +29,18 @@ jobs:
       - run: npm install --no-audit --no-fund
 
       - name: Run sync
-        env:
-          KV_REST_API_REDIS_URL: ${{ secrets.KV_REST_API_REDIS_URL }}
         run: npx tsx scripts/sync.ts
+
+      - name: Commit updated index files
+        run: |
+          if [ -z "$(git status --porcelain -- data)" ]; then
+            echo "No index changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "chore: sync oapp index"
+          git pull --rebase
+          git push

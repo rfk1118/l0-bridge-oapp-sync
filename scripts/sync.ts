@@ -1,26 +1,23 @@
 #!/usr/bin/env tsx
 /**
  * Incremental cron — for each Tier A chain:
- *   1. Read the Redis blob `oapp-index:{eid}` (created on first run if absent).
+ *   1. Read the GitHub-tracked JSON file `data/oapp-index-{eid}.json`
+ *      (created on first run if absent).
  *   2. Scan `EndpointV2.PacketSent` from `meta.lastSyncedBlock + 1` (or
  *      `latest - INITIAL_LOOKBACK` if there's no prior state) up to the
  *      current chain head, capped by MAX_BLOCKS_PER_RUN and a wall-clock
  *      budget per chain so one slow chain can't starve the others.
  *   3. Multicall `token()` on every new sender, classify as adapter /
  *      native OFT / unknown.
- *   4. Merge into the blob, bump `lastSyncedBlock`, write back.
+ *   4. Merge into the JSON file, bump `lastSyncedBlock`, write back.
  *
  * Designed for GitHub Actions (no function timeout) but trivially runnable
- * anywhere with `npx tsx scripts/sync.ts`. The runtime reader in the main
- * l0-bridge repo (`oappIndex.ts`) overlays this Redis blob on top of its
- * bundled JSON snapshots.
- *
- * Required env:
- *   KV_REST_API_REDIS_URL — same Upstash instance as the main app
+ * anywhere with `npx tsx scripts/sync.ts`.
  */
 
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import path from 'node:path'
 import { ethers } from 'ethers'
-import { createClient } from 'redis'
 import { TIER_A_CHAINS, type ChainTarget } from './lib/chains.js'
 import {
   scanPacketSentRange,
@@ -30,7 +27,7 @@ import {
   type OAppIndexFile,
 } from './lib/scanner.js'
 
-const REDIS_KEY_PREFIX = 'oapp-index:'
+const DATA_DIR = process.env.OAPP_INDEX_DIR ?? 'data'
 const MAX_BLOCKS_PER_RUN = 200_000
 const MAX_SECONDS_PER_CHAIN = 60
 const INITIAL_LOOKBACK_BLOCKS = 5_000
@@ -62,33 +59,30 @@ async function makeProvider(target: ChainTarget): Promise<ethers.JsonRpcProvider
   return null
 }
 
-interface RedisLike {
-  get: (k: string) => Promise<string | null>
-  set: (k: string, v: string) => Promise<unknown>
-  quit: () => Promise<unknown>
+function indexFilePath(eid: number): string {
+  return path.join(process.cwd(), DATA_DIR, `oapp-index-${eid}.json`)
 }
 
-async function connectRedis(): Promise<RedisLike> {
-  const url = process.env.KV_REST_API_REDIS_URL
-  if (!url) throw new Error('KV_REST_API_REDIS_URL not set')
-  const client = createClient({ url })
-  client.on('error', (err) => console.error('redis error:', err.message))
-  await client.connect()
-  return client as unknown as RedisLike
+function isNodeError(err: unknown): err is NodeJS.ErrnoException {
+  return err instanceof Error && 'code' in err
 }
 
-async function readBlob(redis: RedisLike, eid: number): Promise<OAppIndexFile | null> {
-  const raw = await redis.get(`${REDIS_KEY_PREFIX}${eid}`)
-  if (!raw) return null
+async function readIndexFile(eid: number): Promise<OAppIndexFile | null> {
   try {
+    const raw = await readFile(indexFilePath(eid), 'utf8')
     return JSON.parse(raw) as OAppIndexFile
-  } catch {
-    return null
+  } catch (err) {
+    if (isNodeError(err) && err.code === 'ENOENT') {
+      return null
+    }
+    throw err
   }
 }
 
-async function writeBlob(redis: RedisLike, file: OAppIndexFile): Promise<void> {
-  await redis.set(`${REDIS_KEY_PREFIX}${file.meta.eid}`, JSON.stringify(file))
+async function writeIndexFile(file: OAppIndexFile): Promise<void> {
+  const filePath = indexFilePath(file.meta.eid)
+  await mkdir(path.dirname(filePath), { recursive: true })
+  await writeFile(filePath, `${JSON.stringify(file, null, 2)}\n`, 'utf8')
 }
 
 interface SyncResult {
@@ -104,7 +98,7 @@ interface SyncResult {
   seconds?: number
 }
 
-async function syncOne(redis: RedisLike, target: ChainTarget): Promise<SyncResult> {
+async function syncOne(target: ChainTarget): Promise<SyncResult> {
   const t0 = Date.now()
   const provider = await makeProvider(target)
   if (!provider) {
@@ -118,7 +112,7 @@ async function syncOne(redis: RedisLike, target: ChainTarget): Promise<SyncResul
 
   const latest = await withTimeout(provider.getBlockNumber(), RPC_PROBE_TIMEOUT_MS, 'getBlockNumber latest')
   const existing =
-    (await readBlob(redis, target.eid)) ??
+    (await readIndexFile(target.eid)) ??
     emptyIndexFile(target.eid, target.chainId, target.chainKey, target.endpointV2)
 
   const lastSynced = existing.meta.lastSyncedBlock || Math.max(0, latest - INITIAL_LOOKBACK_BLOCKS)
@@ -163,7 +157,7 @@ async function syncOne(redis: RedisLike, target: ChainTarget): Promise<SyncResul
     lastSyncedBlock: scan.highestScannedBlock,
     firstScannedBlock: existing.meta.firstScannedBlock || scan.lowestScannedBlock,
   }
-  await writeBlob(redis, next)
+  await writeIndexFile(next)
 
   return {
     eid: target.eid,
@@ -183,13 +177,12 @@ async function main(): Promise<void> {
   const targets = eidFilter ? TIER_A_CHAINS.filter((c) => c.eid === eidFilter) : TIER_A_CHAINS
 
   console.log(`syncing ${targets.length} chain(s)`)
-  const redis = await connectRedis()
 
   const results: SyncResult[] = []
   for (const target of targets) {
     console.log(`\n[${target.chainKey} eid=${target.eid}]`)
     try {
-      const r = await syncOne(redis, target)
+      const r = await syncOne(target)
       results.push(r)
       if (r.status === 'synced') {
         console.log(
@@ -204,8 +197,6 @@ async function main(): Promise<void> {
       results.push({ eid: target.eid, chainKey: target.chainKey, status: 'error', message })
     }
   }
-
-  await redis.quit()
 
   console.log('\n========== summary ==========')
   const synced = results.filter((r) => r.status === 'synced').length
