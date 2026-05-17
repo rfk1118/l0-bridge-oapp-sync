@@ -4,8 +4,8 @@
     "chainId": 1,
     "chainKey": "ethereum",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-17T23:20:24.361Z",
-    "lastSyncedBlock": 25118159,
+    "syncedAt": "2026-05-17T23:48:32.369Z",
+    "lastSyncedBlock": 25118300,
     "firstScannedBlock": 25108615
   },
   "adapters": {
@@ -69,7 +69,10 @@
     "0xdb6ba5d510f114f9b2ea08bea7d30e32eee33411": "0x468b08f3cb200412f44cac7ec0ae5a2109264435",
     "0x000000fa00b200406de700041cfc6b19bbfb4d13": "0x00000000bc5ff0261b97004a79c6d361002ba2db",
     "0x3a810ff7211b40c4fa76205a14efe161615d0385": "0xd4423795fd904d9b87554940a95fb7016f172773",
-    "0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab": "0x5c7e91f4a8e58e701bfe621990bd6fa4fd7c5379"
+    "0xdef1ca1fb7fbcdc777520aa7f396b4e015f497ab": "0x5c7e91f4a8e58e701bfe621990bd6fa4fd7c5379",
+    "0x1bbe973bef3a977fc51cbed703e8ffdefe001fed": "0x1700c9a8b7761da105966efc6b02900b6a62bb33",
+    "0xda5e1988097297dcdc1f90d4dfe7909e847cbef6": "0x846e52d0dd71c2fdc891538b2d37ff84345c7b9f",
+    "0xb0076de78dc50581770bba1d211ddc0ad4f2a241": "0x70f2eadf1ca1969ff42b0c78e9da519e8937cbaf"
   },
   "nativeOfts": [
     "0x04acaf8d2865c0714f79da09645c13fd2888977f",
