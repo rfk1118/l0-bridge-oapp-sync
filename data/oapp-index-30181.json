@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "eid": 30181,
+    "chainId": 5000,
+    "chainKey": "mantle",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T07:58:11.210Z",
+    "lastSyncedBlock": 95437189,
+    "firstScannedBlock": 95432190
+  },
+  "adapters": {
+    "0x779ded0c9e1022225f8e0630b35a9b54be713736": "0xcb768e263fb1c62214e7cab4aa8d036d76dc59cc"
+  },
+  "nativeOfts": [
+    "0xe6829d9a7ee3040e1276fa75293bde931859e8fa"
+  ],
+  "unknownOApps": []
+}

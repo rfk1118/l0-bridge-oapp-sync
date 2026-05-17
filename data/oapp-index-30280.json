@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "eid": 30280,
+    "chainId": 1329,
+    "chainKey": "sei",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T07:58:16.757Z",
+    "lastSyncedBlock": 207920583,
+    "firstScannedBlock": 207920584
+  },
+  "adapters": {},
+  "nativeOfts": [],
+  "unknownOApps": []
+}

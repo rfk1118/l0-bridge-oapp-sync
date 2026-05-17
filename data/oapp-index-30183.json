@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "eid": 30183,
+    "chainId": 59144,
+    "chainKey": "linea",
+    "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
+    "syncedAt": "2026-05-17T07:58:11.522Z",
+    "lastSyncedBlock": 30675632,
+    "firstScannedBlock": 30670633
+  },
+  "adapters": {},
+  "nativeOfts": [
+    "0x1bf74c010e6320bab11e2e5a532b5ac15e0b8aa6",
+    "0x4186bfc76e2e237523cbc30fd220fe055156b41f",
+    "0xc7346783f5e645aa998b106ef9e7f499528673d8"
+  ],
+  "unknownOApps": [
+    "0x138eb30f73bc423c6455c53df6d89cb01d9ebc63",
+    "0x26da582889f59eaae9da1f063be0140cd93e6a4f",
+    "0x5f688f563dc16590e570f97b542fa87931af2fed"
+  ]
+}
