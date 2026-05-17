@@ -1,6 +1,13 @@
 name: Sync OApp Index
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/sync.yml'
+      - 'package.json'
+      - 'scripts/**'
   schedule:
     # Every 30 minutes.
     - cron: '*/30 * * * *'
