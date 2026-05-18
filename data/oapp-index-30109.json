@@ -4,8 +4,8 @@
     "chainId": 137,
     "chainKey": "polygon",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-18T15:06:47.442Z",
-    "lastSyncedBlock": 87072628,
+    "syncedAt": "2026-05-18T16:35:55.419Z",
+    "lastSyncedBlock": 87075684,
     "firstScannedBlock": 87003935
   },
   "adapters": {
@@ -18,6 +18,7 @@
     "0xfdcc3dd6671eab0709a4c0f3f53de9a333d80798": "0xb9d852a3f9b3a82e243faab0272604102a111e1a"
   },
   "nativeOfts": [
+    "0x27f6c8289550fce67f6b50bed1f519966afe5287",
     "0x3e12b9d6a4d12cd9b4a6d613872d0eb32f68b380",
     "0x6985884c4392d348587b19cb9eaaf157f13271cd",
     "0x80eede496655fb9047dd39d9f418d5483ed600df",
