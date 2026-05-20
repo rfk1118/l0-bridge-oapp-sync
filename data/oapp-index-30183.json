@@ -4,8 +4,8 @@
     "chainId": 59144,
     "chainKey": "linea",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-20T17:05:50.482Z",
-    "lastSyncedBlock": 30718400,
+    "syncedAt": "2026-05-20T18:17:23.030Z",
+    "lastSyncedBlock": 30719275,
     "firstScannedBlock": 30670711
   },
   "adapters": {},
@@ -19,6 +19,7 @@
   "unknownOApps": [
     "0x138eb30f73bc423c6455c53df6d89cb01d9ebc63",
     "0x26da582889f59eaae9da1f063be0140cd93e6a4f",
-    "0x5f688f563dc16590e570f97b542fa87931af2fed"
+    "0x5f688f563dc16590e570f97b542fa87931af2fed",
+    "0xe9ef538d0430c63422cd23f60a1548261248dfb4"
   ]
 }
