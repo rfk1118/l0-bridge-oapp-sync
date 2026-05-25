@@ -4,11 +4,14 @@
     "chainId": 1329,
     "chainKey": "sei",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-25T16:17:58.445Z",
-    "lastSyncedBlock": 209661661,
+    "syncedAt": "2026-05-25T18:04:21.670Z",
+    "lastSyncedBlock": 209677837,
     "firstScannedBlock": 209656662
   },
   "adapters": {},
   "nativeOfts": [],
-  "unknownOApps": []
+  "unknownOApps": [
+    "0x13379b489fb2e76cedf96bceaa2441e5930d75e1",
+    "0x1502fa4be69d526124d453619276faccab275d3d"
+  ]
 }
