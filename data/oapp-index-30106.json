@@ -4,8 +4,8 @@
     "chainId": 43114,
     "chainKey": "avalanche",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-30T01:38:47.515Z",
-    "lastSyncedBlock": 86704097,
+    "syncedAt": "2026-05-30T03:07:31.475Z",
+    "lastSyncedBlock": 86709265,
     "firstScannedBlock": 85644316
   },
   "adapters": {
