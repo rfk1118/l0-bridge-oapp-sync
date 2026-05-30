@@ -4,8 +4,8 @@
     "chainId": 8453,
     "chainKey": "base",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-05-30T12:53:10.549Z",
-    "lastSyncedBlock": 46678121,
+    "syncedAt": "2026-05-30T13:33:21.278Z",
+    "lastSyncedBlock": 46679327,
     "firstScannedBlock": 46103000
   },
   "adapters": {
