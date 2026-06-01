@@ -4,8 +4,8 @@
     "chainId": 137,
     "chainKey": "polygon",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-01T21:42:52.259Z",
-    "lastSyncedBlock": 87777400,
+    "syncedAt": "2026-06-01T22:44:37.564Z",
+    "lastSyncedBlock": 87779517,
     "firstScannedBlock": 87003935
   },
   "adapters": {
@@ -60,6 +60,7 @@
     "0x461c12fba639303da045255dd32eea7e38ac69b0",
     "0x5ba000bb06230e0582e111f08e1f2f2f200005ba",
     "0x6ce9bf8cdab780416ad1fd87b318a077d2f50eac",
+    "0x6edf2a8a412140cd2e1bff7ddc99663a035d70c1",
     "0x7988ba3fb144767e5033f9fc40eeb294cea27f04",
     "0x79cb914f3f336426e89fab55a9488ab25770552d",
     "0x7b1a44fa3928d61e04e8c04e6798dee1c3d5f66c",
@@ -68,6 +69,7 @@
     "0x8b7a0007f6e0ddb16cd14f34af3306947fc698a6",
     "0x8d06caa132eeaec67e67f1298fa9f4f9e79fec57",
     "0x9c7ed1e9b7587d74b10453577cea808c84f06f9d",
+    "0x9fa3b0b698e8b2cee827b9085acc17ab85601ff5",
     "0xc2b638cb5042c1b3c5d5c969361fb50569840583",
     "0xcb9c34dd8dda5f84c0b18bc8a40d11e51a4eca47",
     "0xcbdc09b831f53eed2409f32896850dd10801851e"
