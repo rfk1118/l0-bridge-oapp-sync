@@ -4,8 +4,8 @@
     "chainId": 8453,
     "chainKey": "base",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-10T23:59:12.228Z",
-    "lastSyncedBlock": 47173302,
+    "syncedAt": "2026-06-11T01:20:38.576Z",
+    "lastSyncedBlock": 47175745,
     "firstScannedBlock": 46103000
   },
   "adapters": {
@@ -233,6 +233,7 @@
     "0x6743d7d8de84021b4fec049a1f1278be9cd95b6e",
     "0x687838649383f180024435b96fe014b351854a2d",
     "0x6985884c4392d348587b19cb9eaaf157f13271cd",
+    "0x69bd04ab9290d2919f228b87f9dccf728e2675cd",
     "0x69f8251caeea32797f19994c6bad65e7f83f6b3f",
     "0x69fe3ee4f41e85a5431bb95bbe897f967845e5aa",
     "0x6a089fb3b1d5d0c22b34e6104a56c19b8d944562",
