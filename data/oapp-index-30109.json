@@ -4,8 +4,8 @@
     "chainId": 137,
     "chainKey": "polygon",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-14T20:55:52.431Z",
-    "lastSyncedBlock": 88510378,
+    "syncedAt": "2026-06-14T21:30:48.089Z",
+    "lastSyncedBlock": 88511767,
     "firstScannedBlock": 87003935
   },
   "adapters": {
