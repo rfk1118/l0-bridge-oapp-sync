@@ -4,8 +4,8 @@
     "chainId": 252,
     "chainKey": "fraxtal",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-20T16:33:35.134Z",
-    "lastSyncedBlock": 37581252,
+    "syncedAt": "2026-06-20T17:32:08.023Z",
+    "lastSyncedBlock": 37583008,
     "firstScannedBlock": 36092319
   },
   "adapters": {
