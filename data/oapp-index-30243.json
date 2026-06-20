@@ -4,8 +4,8 @@
     "chainId": 81457,
     "chainKey": "blast",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-20T13:35:17.012Z",
-    "lastSyncedBlock": 36576350,
+    "syncedAt": "2026-06-20T14:47:37.409Z",
+    "lastSyncedBlock": 36578520,
     "firstScannedBlock": 35092767
   },
   "adapters": {
@@ -19,6 +19,7 @@
   ],
   "unknownOApps": [
     "0x26da582889f59eaae9da1f063be0140cd93e6a4f",
+    "0x5ba000bb06230e0582e111f08e1f2f2f200005ba",
     "0xb07e2b06839ecf55a1e47a52e4a14ba6d6d76fa4"
   ]
 }
