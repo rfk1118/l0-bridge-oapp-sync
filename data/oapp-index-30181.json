@@ -4,8 +4,8 @@
     "chainId": 5000,
     "chainKey": "mantle",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-06-20T01:44:01.683Z",
-    "lastSyncedBlock": 96894764,
+    "syncedAt": "2026-06-20T03:08:45.369Z",
+    "lastSyncedBlock": 96897305,
     "firstScannedBlock": 95432517
   },
   "adapters": {
