@@ -4,8 +4,8 @@
     "chainId": 534352,
     "chainKey": "scroll",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-07-03T04:24:48.812Z",
-    "lastSyncedBlock": 34263195,
+    "syncedAt": "2026-07-03T07:45:29.426Z",
+    "lastSyncedBlock": 34264275,
     "firstScannedBlock": 33725087
   },
   "adapters": {
