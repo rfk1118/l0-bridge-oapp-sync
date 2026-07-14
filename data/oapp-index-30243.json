@@ -4,8 +4,8 @@
     "chainId": 81457,
     "chainKey": "blast",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-07-14T10:42:03.844Z",
-    "lastSyncedBlock": 37607954,
+    "syncedAt": "2026-07-14T12:07:45.512Z",
+    "lastSyncedBlock": 37610524,
     "firstScannedBlock": 35092767
   },
   "adapters": {
