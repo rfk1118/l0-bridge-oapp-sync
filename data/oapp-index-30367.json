@@ -4,8 +4,8 @@
     "chainId": 999,
     "chainKey": "hyperliquid",
     "endpointV2": "0x3A73033C0b1407574C76BdBAc67f126f6b4a9AA9",
-    "syncedAt": "2026-07-29T08:33:42.670Z",
-    "lastSyncedBlock": 35685799,
+    "syncedAt": "2026-07-29T22:58:27.962Z",
+    "lastSyncedBlock": 35686299,
     "firstScannedBlock": 35324480
   },
   "adapters": {},
