@@ -4,12 +4,12 @@
     "chainId": 10,
     "chainKey": "optimism",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-08-03T15:40:55.611Z",
-    "lastSyncedBlock": 155086438,
+    "syncedAt": "2026-08-03T17:47:35.146Z",
+    "lastSyncedBlock": 155090238,
     "firstScannedBlock": 151698284
   },
   "adapters": {
-    "0x01bff41798a0bcf287b996046ca68b395dbc1071": "0xf03b4d9ac1d5d1e7c4cef54c2a313b9fe051a0ad",
+    "0x01bff41798a0bcf287b996046ca68b395dbc1071": "0x8efbdff3bae9a3ed3c0ac7ad86bebf9aee46086f",
     "0x4200000000000000000000000000000000000042": "0xac800fd6159c2a2cb8fc31ef74621eb430287a5a",
     "0x3e29d3a9316dab217754d13b28646b76607c5f04": "0xafd1ec4f678a1561db569ac29852d35b82609c04",
     "0xd745b03b303353bf0872d7aaac7b6fcc01bb43fe": "0x7c8503dcc03f330177e5abe84ff285f0166b7127",
@@ -24,6 +24,7 @@
     "0xb73ee5488647a6302ebf5fee8af3152f6960ae4c": "0x01cacca455d04f0d52231589f0deb543de9213e3"
   },
   "nativeOfts": [
+    "0x0531a44bbbe0d803daca4a2b429c2ce622a1b3c2",
     "0x05dd96ec8df0039fc24b2ceb8585adc64b173156",
     "0x0c9446d6a4fb3a9ea0a8bc85a4cb6646e424d36f",
     "0x300d2c875c6fb8ce4bf5480b4d34b7c9ea8a33a4",
