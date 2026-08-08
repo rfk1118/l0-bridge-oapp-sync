@@ -4,15 +4,21 @@
     "chainId": 999,
     "chainKey": "hyperliquid",
     "endpointV2": "0x3A73033C0b1407574C76BdBAc67f126f6b4a9AA9",
-    "syncedAt": "2026-08-08T04:34:43.549Z",
-    "lastSyncedBlock": 35694299,
+    "syncedAt": "2026-08-08T08:35:46.353Z",
+    "lastSyncedBlock": 35894299,
     "firstScannedBlock": 35324480
   },
-  "adapters": {},
+  "adapters": {
+    "0xac962fa04bf91b7fd0dc0c5c32414e0ce3c51e03": "0x0c0104e35a101de9af2e0cb307a15e1175580bd5",
+    "0x0000000000000000000000000000000000000000": "0x007c26ed5c33fe6fef62223d4c363a01f1b1ddc1",
+    "0x97df58ce4489896f4ec7d16b59b64ad0a56243a8": "0xc92cdd68986c268a468a3cb11894b9ebbb8c3914"
+  },
   "nativeOfts": [
     "0x741bd193b6b40f8703d2e116fd1965421f290f58",
     "0x79bbf4508b1391af3a0f4b30bb5fc4aa9ab0e07c",
-    "0xd70659a6396285bf7214d7ea9673184e7c72e07e"
+    "0x9f0c013016e8656bc256f948cd4b79ab25c7b94d",
+    "0xd70659a6396285bf7214d7ea9673184e7c72e07e",
+    "0xe6829d9a7ee3040e1276fa75293bde931859e8fa"
   ],
   "unknownOApps": [
     "0x0ad339d66bf4aed5ce31c64bc37b3244b6394a77",
@@ -36,6 +42,7 @@
     "0x95d7a59c230d184f16b497c3c1bb834ca397c241",
     "0x9a12cb8869498d8826567437abea27be1c2ba9ab",
     "0x9efdfc72c1bc90b36f8aae35247e62310c58eacf",
+    "0xa2815cd6fa60000200d7e668ba427e890e83664f",
     "0xa51dc81944a15623874981181a99d6c56b20ed56",
     "0xa755782a71bb7ae05ce9b74646ddb52206b96a65",
     "0xaa3871e64ca8c09fbdded327b1269224643cb83c",
