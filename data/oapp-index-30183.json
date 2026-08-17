@@ -4,8 +4,8 @@
     "chainId": 59144,
     "chainKey": "linea",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-08-17T17:22:22.306Z",
-    "lastSyncedBlock": 31744718,
+    "syncedAt": "2026-08-17T17:54:16.241Z",
+    "lastSyncedBlock": 31744931,
     "firstScannedBlock": 30670711
   },
   "adapters": {
