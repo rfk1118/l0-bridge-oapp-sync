@@ -4,8 +4,8 @@
     "chainId": 42161,
     "chainKey": "arbitrum",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-08-23T18:22:00.678Z",
-    "lastSyncedBlock": 497631435,
+    "syncedAt": "2026-08-23T18:56:13.076Z",
+    "lastSyncedBlock": 497639588,
     "firstScannedBlock": 463704161
   },
   "adapters": {
