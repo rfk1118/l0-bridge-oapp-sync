@@ -4,8 +4,8 @@
     "chainId": 167000,
     "chainKey": "taiko",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-08-29T13:55:41.386Z",
-    "lastSyncedBlock": 10703604,
+    "syncedAt": "2026-08-29T17:29:36.054Z",
+    "lastSyncedBlock": 10709950,
     "firstScannedBlock": 6819412
   },
   "adapters": {},
