@@ -4,8 +4,8 @@
     "chainId": 146,
     "chainKey": "sonic",
     "endpointV2": "0x6F475642a6e85809B1c36Fa62763669b1b48DD5B",
-    "syncedAt": "2026-08-31T06:36:29.061Z",
-    "lastSyncedBlock": 78461922,
+    "syncedAt": "2026-08-31T14:47:48.422Z",
+    "lastSyncedBlock": 78477990,
     "firstScannedBlock": 70835407
   },
   "adapters": {
