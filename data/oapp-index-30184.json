@@ -4,8 +4,8 @@
     "chainId": 8453,
     "chainKey": "base",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-09-27T00:09:38.418Z",
-    "lastSyncedBlock": 51839214,
+    "syncedAt": "2026-09-27T05:31:57.925Z",
+    "lastSyncedBlock": 51848884,
     "firstScannedBlock": 46103000
   },
   "adapters": {
@@ -181,7 +181,9 @@
     "0x6d659daa2f80d1547f6348bcc2ae4d9bd71d6374": "0xa41e69f277ef8159776ec5c311d1e524cd39060e",
     "0xb4c6458c2e67da23caa4ffadb9b4d3659da98164": "0xbcce91dcbd52b7e92b15d3ea99a1f37e20d7da04",
     "0xe904aea5e1b110c9174728fa2effc8aed19e98ef": "0x32528dd09114763af13692c311e865f28fc5caef",
-    "0x7e13b43065380acdec1c2d138c579cbbbafa0731": "0x6a7e6616653e84eee0c70257ec2e3d79a4476a7e"
+    "0x7e13b43065380acdec1c2d138c579cbbbafa0731": "0x6a7e6616653e84eee0c70257ec2e3d79a4476a7e",
+    "0xd80763694bb782a09f2bc8f2d10ff5777380ce44": "0x4458d213bd8488e81df95687ed2f24ffe612ccf8",
+    "0x303c4f39ea359155c698807168e9dc3aa1df2b95": "0x63fa0602686b0bb0d132f27a4fde3b212d48d89b"
   },
   "nativeOfts": [
     "0x0000006238e3c7797ae71827da303560bae1b125",
