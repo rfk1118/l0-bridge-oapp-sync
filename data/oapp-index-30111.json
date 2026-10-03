@@ -4,8 +4,8 @@
     "chainId": 10,
     "chainKey": "optimism",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-10-02T23:56:23.119Z",
-    "lastSyncedBlock": 157693302,
+    "syncedAt": "2026-10-03T03:40:03.879Z",
+    "lastSyncedBlock": 157700013,
     "firstScannedBlock": 151698284
   },
   "adapters": {
