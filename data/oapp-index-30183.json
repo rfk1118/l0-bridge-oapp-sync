@@ -4,8 +4,8 @@
     "chainId": 59144,
     "chainKey": "linea",
     "endpointV2": "0x1a44076050125825900e736c501f859c50fE728c",
-    "syncedAt": "2026-10-08T21:47:04.777Z",
-    "lastSyncedBlock": 32269436,
+    "syncedAt": "2026-10-09T01:42:14.764Z",
+    "lastSyncedBlock": 32270656,
     "firstScannedBlock": 30670711
   },
   "adapters": {
@@ -35,13 +35,22 @@
   ],
   "unknownOApps": [
     "0x138eb30f73bc423c6455c53df6d89cb01d9ebc63",
+    "0x226012e08d486d62aa0a2660765e08675d091931",
     "0x26da582889f59eaae9da1f063be0140cd93e6a4f",
     "0x36ffaebacede88012135dd390488fcffa2d8067b",
+    "0x417ea3ee59d37da9b0f83dc068b2d36dad214881",
+    "0x59a350ba27fa1b108c5618ee6f1659332d43f546",
+    "0x5b716177957cec6e32a1ba8a2bb9566848cd4f7e",
     "0x5ef37628d45c80740fb6db7ed9c0a753b4f85263",
     "0x5f688f563dc16590e570f97b542fa87931af2fed",
     "0x823106e745a62d0c2fc4d27644c62ade946d9cca",
     "0x8d6775b4d4a5217de1d2f3018ebae3085e1a348d",
+    "0x90a1552dafcdd84bdbe09d7a097b57ee5eea79e2",
     "0xb07e2b06839ecf55a1e47a52e4a14ba6d6d76fa4",
-    "0xe9ef538d0430c63422cd23f60a1548261248dfb4"
+    "0xca6f603117ea999a3793fedb232a2ddff0e7a3e3",
+    "0xd1738427fd1c4626e18c87eabb4de2a787abd55e",
+    "0xda10d1b6fff5171b3e3eaa0ef337752906a749cb",
+    "0xe9ef538d0430c63422cd23f60a1548261248dfb4",
+    "0xeed1c4aa6cf6e09bff046192b133eac4b1f2516c"
   ]
 }
